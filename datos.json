@@ -1,0 +1,64 @@
+[{
+		"pais": "España",
+		"coordenadas": [
+			40.463668,
+			-3.749219
+		],
+		"casos": 141942,
+		"habitantes": 46.66
+	},
+	{
+		"pais": "Canada",
+		"coordenadas": [
+			56.1303673,
+			-106.3467712
+		],
+		"casos": 17872,
+		"habitantes": 37.6
+	},
+	{
+		"pais": "Italia",
+		"coordenadas": [
+			41.8719406,
+			12.56738
+		],
+		"casos": 135586,
+		"habitantes": 60.48
+	},
+	{
+		"pais": "China",
+		"coordenadas": [
+			35.86166,
+			104.1953964
+		],
+		"casos": 82718,
+		"habitantes": 1395.38
+	},
+	{
+		"pais": "Brazil",
+		"coordenadas": [
+			-14.235004,
+			-51.9252815
+		],
+		"casos": 5717,
+		"habitantes": 210.14
+	},
+	{
+		"pais": "Afghanistan",
+		"coordenadas": [
+			33.9391098,
+			67.7099533
+		],
+		"casos": 174,
+		"habitantes": 35.53
+	},
+	{
+		"pais": "France",
+		"coordenadas": [
+			46.2276382,
+			2.2137489
+		],
+		"casos": 52827,
+		"habitantes": 67.64
+	}
+]
