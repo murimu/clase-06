@@ -6,33 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--La siguiente línea va a buscar la biblioteca de p5.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
-    <!--La siguiente línea va a buscar la biblioteca de Chart.js-->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-    <style>
-        html, body { margin: 0; padding: 0; overflow: hidden; }
-        canvas { display: block; }
-        p a{font-family:Helvetica, Arial, sans-serif; font-size:12px; padding:3px 5px; background:black; color:silver; text-decoration: none;}
-        p a:hover{text-decoration: underline; color:white;}
-    </style>
-    <title>p5.js + Chart.js</title>
+   <!--La siguiente línea va a buscar la biblioteca de Chart.js-->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <meta name="description" content="Descripción de la página" />
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Muriel Munoz | p5.js + Chart.js</title>
 </head>
 
 <body>
-
+    <select onchange="if (this.value) window.location.href=this.value">
+            <option value="index.html">Portada &rarr; index.html</option>
+            <option value="index-1.html">Clase 01 &rarr; index-1.html</option>
+            <option value="index-2.html">Clase 02 &rarr; index-2.html</option>
+            <option value="index-3.html">Clase 03 - portada &rarr; index-3.html</option>
+            <option value="page-3.html">Clase 03 - página &rarr; page-3.html</option>
+            <option value="index-4.html"selected>Clase 04 - portada &rarr; index-4.html</option>
+            <option value="page-4.html">Clase 04 - página &rarr; page-4.html</option>
+            <option value="index-5.html">Clase 05 - portada &rarr; index-5.html</option>
+            <option value="graph-5.html">Clase 05 - gráfico &rarr; graph-5.html</option>
+            <option value="mapa-5.html">Clase 05 - mapa &rarr; mapa-5.html</option>
+    </select>
     <script>
         var url = "https://pomber.github.io/covid19/timeseries.json";
-        var casos, japan, philippines, taiwan*, peru;
+        var casos, vitnam, indonesia, japon;
         var marzo = [];
-        var marzo_japan = [];
-        var marzo_philippines = [];
-        var marzo_taiwan* = [];
+        var marzo_vitnam = [];
+        var marzo_indonesia = [];
+        var marzo_japon = [];
 
         function preload() {
             casos = loadJSON(url);
         }
 
         function setup() {
-            createElement('p','<a href="page.html">ir a page.html</a>').position(windowWidth-100,0).style('z-index','9999');
 
             createCanvas(windowWidth, windowHeight).id("chart");
 
@@ -40,31 +47,31 @@
                 marzo.push(x);
             }
 
-            japan = casos.Japan;
-            philippines = casos.Philippines;
-            taiwan* = casos.Taiwan*;
+            vitnam = casos.Vitnam;
+            indonesia = casos.Indonesia;
+            japon = casos.Japan;
 
-            for (let x = 0; x < Japan.length; x++) {
-                if (Japan[x].date.includes("-3-")) {
-                    marzo_japan.push(japan[x].confirmed);
+            for (let x = 0; x < vitnam.length; x++) {
+                if (vitnam[x].date.includes("-3-")) {
+                    marzo_vitnam.push(vitnam[x].confirmed);
                 }
             }
 
-            for (let x = 0; x < Philippines.length; x++) {
-                if (philippines[x].date.includes("-3-")) {
-                    marzo_philippines.push(philippines[x].confirmed);
+            for (let x = 0; x < indonesia.length; x++) {
+                if (indonesia[x].date.includes("-3-")) {
+                    marzo_indonesia.push(indonesia[x].confirmed);
                 }
             }
 
-            for (let x = 0; x < Taiwan*.length; x++) {
-                if (taiwan*[x].date.includes("-3-")) {
-                    marzo_taiwan*.push(taiwan*[x].confirmed);
+            for (let x = 0; x < japon.length; x++) {
+                if (japon[x].date.includes("-3-")) {
+                    marzo_japon.push(japon[x].confirmed);
                 }
             }
 
-            console.log(marzo_japan);
-            console.log(marzo_philippines);
-            console.log(marzo_taiwan*);
+            console.log(marzo_vitnam);
+            console.log(marzo_indonesia);
+            console.log(marzo_japon);
 
             /*
             Con p5.js vamos por el JSON, creamos el canvas y también algunos arreglos con datos para visualizar. Con chart.js dibujamos en el canvas creado, aprovechando los arreglos de marzo (labels), marzo_chile, marzo_argentina y marzo_brasil (data).
@@ -75,29 +82,29 @@
                 data: {
                     labels: marzo,
                     datasets: [{
-                        label: 'Japan',
-                        backgroundColor: 'rgba(255, 55, 0,.1)',
-                        borderColor: 'rgb(255, 55, 0)',
+                        label: 'Vitnam',
+                        backgroundColor: 'rgba(0, 56, 168,.1)',
+                        borderColor: 'rgb(0, 56, 168)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_japan
+                        data: marzo_vitnam
                     }, {
-                        label: 'Philippines',
-                        backgroundColor: 'rgba(75,175,245,.1)',
-                        borderColor: 'rgb(75,175,245)',
+                        label: 'Indonesia',
+                        backgroundColor: 'rgba(255,0,0,.1)',
+                        borderColor: 'rgb(255,0,0)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_philippines
+                        data: marzo_indonesia
                     }, {
-                        label: 'Taiwan*',
-                        backgroundColor: 'rgba(22, 184, 62,.1)',
-                        borderColor: 'rgb(22, 184, 62)',
+                        label: 'Japon',
+                        backgroundColor: 'rgba(188, 0, 45,.1)',
+                        borderColor: 'rgb(188, 0, 45)',
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_taiwan*
+                        data: marzo_japon
                     }]
                 },
                 options: {

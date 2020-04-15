@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+select {
+    position: absolute;
+    right: 3%;
+    top: 4%;
+    z-index: 99999999;
+}
+
+canvas {
+    display: block;
+}
+
+div {
+    padding: 0.5rem 3rem;
+}
+
+h1, p {
+    padding: 0.25rem;
+}

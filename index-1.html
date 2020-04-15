@@ -3,7 +3,7 @@
 
 <head>
     <script src="p5.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="estilo.css">
     <meta charset="utf-8">
     <title>Mi primera página</title>
 
@@ -11,7 +11,19 @@
 
 <body>
     <h1>Muriel Muñoz</h1>
-    <script src="sketch.js"></script>
+    <select onchange="if (this.value) window.location.href=this.value">
+        <option value="index.html" >Portada &rarr; index.html</option>
+        <option value="index-1.html"selected>Clase 01 &rarr; index-1.html</option>
+        <option value="index-2.html">Clase 02 &rarr; index-2.html</option>
+        <option value="index-3.html">Clase 03 - portada &rarr; index-3.html</option>
+        <option value="page-3.html">Clase 03 - página &rarr; page-3.html</option>
+        <option value="index-4.html">Clase 04 - portada &rarr; index-4.html</option>
+        <option value="page-4.html">Clase 04 - página &rarr; page-4.html</option>
+        <option value="index-5.html">Clase 05 - portada &rarr; index-5.html</option>
+        <option value="graph-5.html">Clase 05 - gráfico &rarr; graph-5.html</option>
+        <option value="mapa-5.html">Clase 05 - mapa &rarr; mapa-5.html</option>
+    </select>
+    <script src="sketch-1.js"></script>
 
 </body>
 
